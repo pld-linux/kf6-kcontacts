@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.249.0
+%define		kdeframever	6.0
 %define		qtver		5.15.2
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf6-%{kfname}
-Version:	5.249.0
-Release:	0.1
+Version:	6.0.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	f3eb19451afba9f2217cd26f03d0d6e6
+Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	bcc9eacf11e58c9cbbac7d9e4b0cb82e
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -83,8 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kcontacts.categories
 %{_datadir}/qlogging-categories6/kcontacts.renamecategories
 %ghost %{_libdir}/libKF6Contacts.so.6
-%attr(755,root,root) %{_libdir}/libKF6Contacts.so.5.*.*
-#%%{_datadir}/kf6/kcontacts
+%attr(755,root,root) %{_libdir}/libKF6Contacts.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
