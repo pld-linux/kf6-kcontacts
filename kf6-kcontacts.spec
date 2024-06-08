@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.2
+%define		kdeframever	6.3
 %define		qtver		5.15.2
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf6-%{kfname}
-Version:	6.2.0
+Version:	6.3.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	e4f63afc9f12c13250135dce2f231804
+# Source0-md5:	f035db2481916507d54bfb8666d7cc40
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -30,7 +30,7 @@ BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Obsoletes:	ka5-kcontacts < 20.12.3
-Obsoletes:	kf5-%{kfname} < %{version}
+#Obsoletes:	kf5-%{kfname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +42,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	ka5-kcontacts-devel < 20.12.3
-Obsoletes:	kf5-%{kfname}-devel < %{version}
+#Obsoletes:	kf5-%{kfname}-devel < %{version}
 
 %description devel
 Header files for %{kfname} development.
@@ -86,6 +86,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kcontacts.renamecategories
 %ghost %{_libdir}/libKF6Contacts.so.6
 %attr(755,root,root) %{_libdir}/libKF6Contacts.so.*.*
+%dir %{_libdir}/qt6/qml/org/kde/contacts
+%{_libdir}/qt6/qml/org/kde/contacts/kcontactsqml.qmltypes
+%{_libdir}/qt6/qml/org/kde/contacts/kde-qmlmodule.version
+%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/contacts/libkcontactsqml.so
+%{_libdir}/qt6/qml/org/kde/contacts/qmldir
 
 %files devel
 %defattr(644,root,root,755)
