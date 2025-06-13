@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.14
+%define		kdeframever	6.15
 %define		qtver		5.15.2
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf6-%{kfname}
-Version:	6.14.0
+Version:	6.15.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	0b6db4db21e997fc14ca177d8f62e0b8
+# Source0-md5:	0a5641dd0fd0334feb63cf15d1b9779b
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
