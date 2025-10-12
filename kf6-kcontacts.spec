@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	6.18
+%define		kdeframever	6.19
 %define		qtver		5.15.2
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf6-%{kfname}
-Version:	6.18.0
+Version:	6.19.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	d4570d32a2e9b5479a26d410e543608b
+# Source0-md5:	2aa45eaeb12c8a462d17b4f6bf8bcd9b
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
@@ -86,11 +86,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories6/kcontacts.categories
 %{_datadir}/qlogging-categories6/kcontacts.renamecategories
 %ghost %{_libdir}/libKF6Contacts.so.6
-%attr(755,root,root) %{_libdir}/libKF6Contacts.so.*.*
+%{_libdir}/libKF6Contacts.so.*.*
 %dir %{_libdir}/qt6/qml/org/kde/contacts
 %{_libdir}/qt6/qml/org/kde/contacts/kcontactsqml.qmltypes
 %{_libdir}/qt6/qml/org/kde/contacts/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/contacts/libkcontactsqml.so
+%{_libdir}/qt6/qml/org/kde/contacts/libkcontactsqml.so
 %{_libdir}/qt6/qml/org/kde/contacts/qmldir
 
 %files devel
