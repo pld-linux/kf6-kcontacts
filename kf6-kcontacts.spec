@@ -37,6 +37,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Address book API based on KDE Frameworks.
 
+%description -l pl.UTF-8
+API do książek adresowych oparte na szkieletach KDE.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
